@@ -60,6 +60,7 @@ body {
 }
 
 .site-nav {
+  display: none;
   border-bottom: 1px solid var(--line);
   background: rgba(3, 6, 20, 0.42);
 }
@@ -133,6 +134,39 @@ body {
 .site-nav-link:hover,
 .site-nav-link:focus,
 .site-nav-link.active {
+  border-color: var(--line-bright);
+  color: #fff;
+  background: rgba(196, 206, 212, 0.12);
+}
+
+.desktop-site-nav {
+  min-height: 58px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(3, 6, 20, 0.42);
+  padding: 10px clamp(20px, 4vw, 54px);
+}
+
+.desktop-site-nav .navbar-nav {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.desktop-site-nav .nav-link {
+  min-height: 38px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #dfe4f4;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 0.84rem;
+  font-weight: 850;
+}
+
+.desktop-site-nav .nav-link:hover,
+.desktop-site-nav .nav-link:focus,
+.desktop-site-nav .nav-link.active {
   border-color: var(--line-bright);
   color: #fff;
   background: rgba(196, 206, 212, 0.12);
@@ -386,6 +420,10 @@ body {
     padding-inline: 16px;
   }
 
+  .site-nav {
+    display: block;
+  }
+
   .site-nav-links {
     display: none;
     padding: 0 16px 12px;
@@ -398,6 +436,10 @@ body {
 
   .site-nav-link {
     width: 100%;
+  }
+
+  .desktop-site-nav {
+    display: none;
   }
 
   .calendar-shell {
