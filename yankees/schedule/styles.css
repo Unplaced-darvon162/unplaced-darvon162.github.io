@@ -1,0 +1,279 @@
+:root {
+  color-scheme: dark;
+  --bs-body-color: #f7f8ff;
+  --bs-body-bg: #050815;
+  --ink: #f7f8ff;
+  --muted: #a7aec4;
+  --quiet: #7d8498;
+  --line: rgba(255, 255, 255, 0.14);
+  --line-bright: rgba(80, 143, 227, 0.44);
+  --red: #c1121f;
+  --gold: #f1b434;
+  --panel: rgba(5, 10, 28, 0.86);
+  --panel-strong: rgba(4, 8, 24, 0.94);
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+}
+
+body {
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 78% 10%, rgba(193, 18, 31, 0.22), transparent 30%),
+    radial-gradient(circle at 12% 20%, rgba(57, 114, 179, 0.28), transparent 28%),
+    linear-gradient(135deg, #050815 0%, #081932 48%, #060711 100%);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.site-shell {
+  max-width: 1440px;
+  padding: 18px;
+}
+
+.schedule-panel {
+  min-height: calc(100vh - 36px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.024) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.024) 1px, transparent 1px),
+    linear-gradient(145deg, rgba(10, 18, 49, 0.98), rgba(4, 7, 22, 0.96) 56%, rgba(11, 23, 48, 0.98));
+  background-size: 34px 34px, 34px 34px, auto;
+  box-shadow: var(--shadow);
+}
+
+.schedule-panel::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 6px;
+  background: linear-gradient(90deg, #4aa3ff, #f3f5f9, var(--red), var(--gold), #4aa3ff);
+}
+
+.topbar {
+  min-height: 86px;
+  padding: 22px clamp(20px, 4vw, 54px);
+  border-bottom: 1px solid var(--line);
+  background: rgba(2, 4, 16, 0.66);
+}
+
+.schedule-body {
+  padding: clamp(20px, 4vw, 48px);
+}
+
+.kicker,
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.display-title,
+.month-title {
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.display-title {
+  font-size: clamp(2.2rem, 6vw, 5.6rem);
+  font-weight: 850;
+  line-height: 0.92;
+}
+
+.month-title {
+  font-size: clamp(1.8rem, 4vw, 3.6rem);
+  font-weight: 850;
+  line-height: 0.98;
+}
+
+.month-summary {
+  max-width: 760px;
+  color: #dfe4f4;
+  font-weight: 650;
+}
+
+.status-pill,
+.nav-home-link,
+.btn-control {
+  min-height: 42px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 14px;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.status-pill {
+  border: 1px solid var(--line);
+  color: var(--gold);
+  background: rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+}
+
+.btn-control {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.btn-control:hover,
+.btn-control:focus {
+  border-color: var(--line-bright);
+  color: #fff;
+  background: rgba(80, 143, 227, 0.14);
+}
+
+.calendar-shell {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(3, 6, 20, 0.72);
+}
+
+.weekday-row,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(130px, 1fr));
+}
+
+.weekday-row {
+  background: rgba(2, 4, 16, 0.72);
+}
+
+.weekday-row span {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.day-cell {
+  min-height: 168px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.day-cell.outside-month {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.day-number {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.day-cell.today .day-number {
+  color: var(--gold);
+}
+
+.game-card {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel-strong);
+  padding: 9px;
+}
+
+.game-card.final {
+  border-color: rgba(154, 240, 200, 0.22);
+}
+
+.game-card.live {
+  border-color: rgba(241, 180, 52, 0.72);
+}
+
+.game-card.win {
+  border-color: rgba(77, 179, 138, 0.72);
+  background:
+    linear-gradient(135deg, rgba(77, 179, 138, 0.2), rgba(4, 8, 24, 0.94) 62%),
+    var(--panel-strong);
+}
+
+.game-card.loss {
+  border-color: rgba(193, 18, 31, 0.68);
+  background:
+    linear-gradient(135deg, rgba(193, 18, 31, 0.19), rgba(4, 8, 24, 0.94) 62%),
+    var(--panel-strong);
+}
+
+.game-card.win .game-status {
+  color: #9af0c8;
+}
+
+.game-card.loss .game-status {
+  color: #ffbec4;
+}
+
+.game-status {
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.matchup {
+  color: var(--ink);
+  font-size: 0.94rem;
+  font-weight: 850;
+}
+
+.game-detail {
+  color: #dfe4f4;
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.empty-day {
+  margin-top: auto;
+  color: rgba(167, 174, 196, 0.42);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.error {
+  color: #ffbec4;
+  font-weight: 800;
+}
+
+@media (max-width: 991.98px) {
+  .calendar-shell {
+    overflow-x: auto;
+  }
+
+  .weekday-row,
+  .calendar-grid {
+    min-width: 980px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .site-shell {
+    padding: 10px;
+  }
+
+  .topbar,
+  .schedule-body {
+    padding-inline: 16px;
+  }
+
+  .header-actions,
+  .status-pill,
+  .nav-home-link,
+  .btn-control {
+    width: 100%;
+  }
+}
