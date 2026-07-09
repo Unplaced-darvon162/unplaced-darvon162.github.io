@@ -1,16 +1,19 @@
 :root {
   color-scheme: dark;
+  --yankees-navy: #132448;
+  --yankees-silver: #c4ced3;
+  --swatch-deep: #0e0e33;
+  --swatch-mid: #1c1f61;
+  --swatch-shadow: #1d1d4c;
   --bs-body-color: #f7f8ff;
-  --bs-body-bg: #050815;
+  --bs-body-bg: var(--swatch-deep);
   --ink: #f7f8ff;
-  --muted: #a7aec4;
-  --quiet: #7d8498;
-  --line: rgba(255, 255, 255, 0.14);
-  --line-bright: rgba(80, 143, 227, 0.44);
-  --red: #c1121f;
-  --gold: #f1b434;
+  --muted: var(--yankees-silver);
+  --quiet: #8f9aa2;
+  --line: rgba(196, 206, 211, 0.18);
+  --line-bright: rgba(196, 206, 211, 0.48);
   --green: #4db38a;
-  --panel-strong: rgba(4, 8, 24, 0.94);
+  --panel-strong: rgba(14, 14, 51, 0.94);
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
 }
 
@@ -18,9 +21,9 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background:
-    radial-gradient(circle at 78% 10%, rgba(193, 18, 31, 0.22), transparent 30%),
-    radial-gradient(circle at 12% 20%, rgba(57, 114, 179, 0.28), transparent 28%),
-    linear-gradient(135deg, #050815 0%, #081932 48%, #060711 100%);
+    radial-gradient(circle at 78% 10%, rgba(196, 206, 211, 0.16), transparent 30%),
+    radial-gradient(circle at 12% 20%, rgba(28, 31, 97, 0.46), transparent 28%),
+    linear-gradient(135deg, var(--swatch-deep) 0%, var(--yankees-navy) 48%, var(--swatch-shadow) 100%);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -40,7 +43,7 @@ body {
   background:
     linear-gradient(rgba(255, 255, 255, 0.024) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.024) 1px, transparent 1px),
-    linear-gradient(145deg, rgba(10, 18, 49, 0.98), rgba(4, 7, 22, 0.96) 56%, rgba(11, 23, 48, 0.98));
+    linear-gradient(145deg, rgba(19, 36, 72, 0.98), rgba(14, 14, 51, 0.96) 56%, rgba(29, 29, 76, 0.98));
   background-size: 34px 34px, 34px 34px, auto;
   box-shadow: var(--shadow);
 }
@@ -50,14 +53,30 @@ body {
   position: absolute;
   inset: auto 0 0;
   height: 6px;
-  background: linear-gradient(90deg, #4aa3ff, #f3f5f9, var(--red), var(--gold), #4aa3ff);
+  background: linear-gradient(90deg, var(--yankees-silver), var(--yankees-navy), var(--swatch-mid), var(--yankees-silver));
 }
 
 .topbar {
   min-height: 86px;
   padding: 22px clamp(20px, 4vw, 54px);
   border-bottom: 1px solid var(--line);
-  background: rgba(2, 4, 16, 0.66);
+  background: rgba(14, 14, 51, 0.72);
+}
+
+.brand-lockup {
+  min-width: 0;
+}
+
+.brand-logo {
+  width: clamp(52px, 6vw, 76px);
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(196, 206, 211, 0.08);
+  padding: 6px;
+  filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.28));
 }
 
 .overview-body {
@@ -117,7 +136,7 @@ body {
 
 .status-pill {
   border: 1px solid var(--line);
-  color: var(--gold);
+  color: var(--yankees-silver);
   background: rgba(255, 255, 255, 0.06);
   white-space: nowrap;
 }
@@ -133,13 +152,13 @@ body {
 .btn-control:focus {
   border-color: var(--line-bright);
   color: #fff;
-  background: rgba(80, 143, 227, 0.16);
+  background: rgba(196, 206, 211, 0.16);
 }
 
 .btn-yankees {
   border-color: rgba(255, 255, 255, 0.16);
   color: var(--ink);
-  background: linear-gradient(135deg, var(--red), #7c0b18);
+  background: linear-gradient(135deg, var(--yankees-navy), var(--swatch-mid));
   font-weight: 800;
 }
 
@@ -147,7 +166,7 @@ body {
 .btn-yankees:focus {
   border-color: rgba(255, 255, 255, 0.32);
   color: #fff;
-  background: linear-gradient(135deg, #d41a28, #8e0d1a);
+  background: linear-gradient(135deg, var(--swatch-mid), var(--swatch-shadow));
 }
 
 .form-control {
@@ -160,7 +179,7 @@ body {
   border-color: var(--line-bright);
   color: var(--ink);
   background-color: rgba(3, 6, 20, 0.92);
-  box-shadow: 0 0 0 0.25rem rgba(80, 143, 227, 0.18);
+  box-shadow: 0 0 0 0.25rem rgba(196, 206, 211, 0.18);
 }
 
 .form-control::placeholder {
@@ -209,7 +228,7 @@ body {
   min-height: 58px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 6px;
-  background: linear-gradient(90deg, rgba(80, 143, 227, 0.18), rgba(255, 255, 255, 0.03));
+  background: linear-gradient(90deg, rgba(196, 206, 211, 0.18), rgba(255, 255, 255, 0.03));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -229,7 +248,7 @@ body {
   height: 34px;
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.08);
-  color: var(--gold);
+  color: var(--yankees-silver);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -252,7 +271,7 @@ body {
 }
 
 .metric-value span {
-  color: var(--gold);
+  color: var(--yankees-silver);
   font-size: clamp(1.45rem, 3vw, 2rem);
   font-weight: 900;
   line-height: 1;
